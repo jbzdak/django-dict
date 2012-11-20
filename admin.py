@@ -11,6 +11,5 @@ class DictionaryAdmin(admin.ModelAdmin):
     list_filter = [
         'type', 'active'
     ]
-    readonly_fields = [
-        'user_changed'
-    ]
+
+admin.site.register(models.Dictionary, DictionaryAdmin)

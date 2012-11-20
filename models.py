@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 CHAR_FIELD_MAX_LEN = 200
 
-
+import _south
 
 class Dictionary(models.Model):
     """
@@ -15,10 +15,14 @@ class Dictionary(models.Model):
     class Meta:
         verbose_name = _(u"Dictionary")
         verbose_name_plural = _(u"Dictionaries")
+        ordering = ["order", "name"]
 
     name = models.CharField(max_length=CHAR_FIELD_MAX_LEN, verbose_name=_("Item name"))
+    label = models.CharField(max_length=CHAR_FIELD_MAX_LEN, verbose_name=_("Item label"))
     active = models.BooleanField(verbose_name=_("Active"), help_text=_("If true this record can be added to new entities"), default=True)
     type = models.CharField(max_length=CHAR_FIELD_MAX_LEN, choices=settings.DICTIONARY_CHOICES)
+    order = models.SmallIntegerField(default=0)
+
 
     def __unicode__(self):
         return ' '.join(('+' if self.active else '-', self.name, self.type))
