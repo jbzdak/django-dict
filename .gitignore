@@ -1,0 +1,6 @@
+venv/**
+**py[co]
+/.idea/**
+old/**
+media/**
+/compiled_static/**
