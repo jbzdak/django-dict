@@ -14,6 +14,7 @@ def try_initialize_south():
          [],
          {
              'type': ['type', {}],
+             'render_pattern': ['render_pattern', {'default', None}],
              },
          )]
     add_introspection_rules(rules, ["^django_dict\.fields\.DictionaryField"])
