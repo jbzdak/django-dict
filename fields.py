@@ -1,7 +1,16 @@
 
+
 __author__ = 'jb'
 
 from django.db.models import ForeignKey
+from django.forms.models import ModelChoiceField
+
+class PatternedModelChoiceField(ModelChoiceField):
+
+    pattern = None
+
+    def label_from_instance(self, obj):
+        return self.pattern.format(field = obj)
 
 class DictionaryField(ForeignKey):
     def __init__(self, type, render_pattern = None, **kwargs):
