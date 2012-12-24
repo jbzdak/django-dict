@@ -15,7 +15,9 @@ class DictionayModelForm(ModelForm):
         super(DictionayModelForm, self).__init__(*largs, **kwargs)
         if self.instance and self.instance.pk is not None:
             for f in self.instance._meta.fields:
-                if isinstance(f, models.ForeignKey) and issubclass(f.rel.to, Dictionary):
+                if ((isinstance(f, models.ForeignKey) and
+                            issubclass(f.rel.to, Dictionary) and
+                            f.name in self.fields)):
                     model_field = self.fields[f.name]
                     value = getattr(self.instance, f.name, None)
                     if value and value not in model_field.choices:
