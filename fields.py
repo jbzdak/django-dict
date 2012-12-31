@@ -2,7 +2,7 @@
 
 __author__ = 'jb'
 
-from django.db.models import ForeignKey
+from django.db.models import ForeignKey, SET_NULL
 from django.forms.models import ModelChoiceField
 
 class PatternedModelChoiceField(ModelChoiceField):
@@ -33,8 +33,12 @@ class DictionaryField(ForeignKey):
                 "type" : type,
                 "active" : True
             }
+        if kwargs.get("null", False) and "on_delete" not in kwargs:
+            kwargs["on_delete"] = SET_NULL
 
         super(DictionaryField, self).__init__(**kwargs)
+
+
 
     def formfield(self, **kwargs):
         defaults = {
