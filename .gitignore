@@ -4,3 +4,5 @@ venv/**
 old/**
 media/**
 /compiled_static/**
+/build/**
+/dist/**
