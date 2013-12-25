@@ -1,15 +1,12 @@
 from django.db.models import Q
 
-
 from django.forms import ChoiceField, ModelForm, TypedChoiceField, ModelChoiceField
 
 from django.db import models
 from models import Dictionary
 
 class DictionayModelForm(ModelForm):
-    """
 
-    """
     def __init__(self, *largs, **kwargs):
         super(DictionayModelForm, self).__init__(*largs, **kwargs)
         if self.instance and self.instance.pk is not None:

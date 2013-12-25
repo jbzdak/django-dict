@@ -1,6 +1,3 @@
-
-
-
 from django.db.models import ForeignKey, SET_NULL
 from django.forms.models import ModelChoiceField
 

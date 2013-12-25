@@ -3,20 +3,28 @@
 Django dictionaries
 ===================
 
-Provides dictionary model that allows one to associate other models with arbitrary dictionary items (or tags). Since
-there will be many kinds of dictionaries dictionary entries have `type` property that facilitate this.
+Provides dictionary model that allows one to associate other models with
+arbitrary tags. Also you can define different types of these tags,
+for example a tag for status of something, and other for each department of
+your company.
 
-Concept of activity
--------------------
+Each ``Dictionaty`` entity has an associated type.
 
-Dictionary entities can also active or inactive, where being inactive means that no new model instances might be associated to
-inactive dictionary entry.
+Features
+--------
 
-When editing models (for example in admin app) logic is as follows: one can associate model instance with a dictionary
-entry iff: dictionary entry has a proper type, is active or was previously associated with this model (even if inactive).
+Dictionary entities can also active or inactive, where being inactive means
+that no new model instances might be associated to
+inactive dictionary entry, but ones that were associated earlier stay
+unchanged.
+
+
+When editing models (for example in admin app) logic is as follows: one can
+associate model instance with a dictionary
+entry iff: dictionary entry has a proper type, is active or was previously
+associated with this instance.
 
 We also provide model form subclass that implements this edit logic.
-
 
 Dictionary types are stored in `settings.DICTIONARY_CHOICES` which is a normal django choice touple.
 
@@ -38,20 +46,26 @@ What is provided apart from model class:
 Examples
 ========
 
-In settings.py::
+In ``settings.py``:
 
- DICTIONARY_CHOICES = (
+.. code-block:: python
+
+    DICTIONARY_CHOICES = (
      ("status", "Status"),
      ("tag", "Tag")
- )
+    )
 
-In models::
+In models:
+
+.. code-block:: python
 
   from django_dict import fields
   class FooBar(models.Model):
         tag = fields.DictionaryField(type="status")
 
-In forms::
+In forms:
+
+.. code-block:: python
 
  from django_dict import forms
  class FooForm(forms.DictionayModelForm):

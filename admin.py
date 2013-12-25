@@ -1,10 +1,6 @@
-
-
 from django.contrib import admin
 
 import models
-
-import forms
 
 class DictionaryAdmin(admin.ModelAdmin):
     list_filter = [

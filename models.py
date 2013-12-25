@@ -16,7 +16,6 @@ class Dictionary(models.Model):
         verbose_name = _(u"Dictionary")
         verbose_name_plural = _(u"Dictionaries")
         ordering = ["order", "name"]
-#        ordering = ["pk"]
 
     name = models.CharField(max_length=CHAR_FIELD_MAX_LEN, verbose_name=_("Item name"))
     label = models.CharField(max_length=CHAR_FIELD_MAX_LEN, verbose_name=_("Item label"))
