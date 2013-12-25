@@ -26,7 +26,7 @@ associated with this instance.
 
 We also provide model form subclass that implements this edit logic.
 
-Dictionary types are stored in `settings.DICTIONARY_CHOICES` which is a normal django choice touple.
+Dictionary types are stored in ``settings.DICTIONARY_CHOICES`` which is a normal django choice touple.
 
 Dictionaty items have three properties:
 

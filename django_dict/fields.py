@@ -34,8 +34,6 @@ class DictionaryField(ForeignKey):
 
         super(DictionaryField, self).__init__(**kwargs)
 
-
-
     def formfield(self, **kwargs):
         defaults = {
 
