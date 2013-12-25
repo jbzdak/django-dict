@@ -43,7 +43,7 @@ class DictionaryField(ForeignKey):
         if self.render_pattern is not None:
             if self.render_pattern == "__label__":
                 class FormField(PatternedModelChoiceField):
-                    pattern = u"{field.label}"
+                    pattern = "{field.label}"
             else:
                 class FormField(PatternedModelChoiceField):
                     pattern = self.render_pattern

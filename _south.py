@@ -7,7 +7,7 @@ def try_initialize_south():
         return
     from south.modelsinspector import add_introspection_rules
 
-    from fields import DictionaryField
+    from .fields import DictionaryField
     rules = [(
          (DictionaryField,),
          [],

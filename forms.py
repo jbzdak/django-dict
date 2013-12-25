@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.forms import ChoiceField, ModelForm, TypedChoiceField, ModelChoiceField
 
 from django.db import models
-from models import Dictionary
+from .models import Dictionary
 
 class DictionayModelForm(ModelForm):
 

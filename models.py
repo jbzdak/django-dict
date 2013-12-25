@@ -6,15 +6,15 @@ from django.utils.translation import ugettext_lazy as _
 
 CHAR_FIELD_MAX_LEN = 200
 
-import _south
+from . import _south
 
 class Dictionary(models.Model):
     """
         Dictionary item. Dictionary
     """
     class Meta:
-        verbose_name = _(u"Dictionary")
-        verbose_name_plural = _(u"Dictionaries")
+        verbose_name = _("Dictionary")
+        verbose_name_plural = _("Dictionaries")
         ordering = ["order", "name"]
 
     name = models.CharField(max_length=CHAR_FIELD_MAX_LEN, verbose_name=_("Item name"))
