@@ -24,7 +24,7 @@ setup(
     package_data = {
         "django_dict" : package_data
     },
-    url='foo',
+    url='https://github.com/jbzdak/django-dict',
     license='BSD-style two clause',
     author='Jacek Bzdak',
     author_email='jbzdak@gmail.com',
