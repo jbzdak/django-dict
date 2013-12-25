@@ -1,4 +1,3 @@
-__author__ = 'jb'
 
 def try_initialize_south():
     try:

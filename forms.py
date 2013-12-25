@@ -1,6 +1,5 @@
 from django.db.models import Q
 
-__author__ = 'jb'
 
 from django.forms import ChoiceField, ModelForm, TypedChoiceField, ModelChoiceField
 
