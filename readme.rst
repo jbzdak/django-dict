@@ -18,7 +18,6 @@ that no new model instances might be associated to
 inactive dictionary entry, but ones that were associated earlier stay
 unchanged.
 
-
 When editing models (for example in admin app) logic is as follows: one can
 associate model instance with a dictionary
 entry iff: dictionary entry has a proper type, is active or was previously
